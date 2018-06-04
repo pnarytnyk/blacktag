@@ -1,7 +1,7 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 import os
 import slackclient
-from slackclien import SlackClient as SC
+from slackclient import SlackClient as SC
 
 sched = BlockingScheduler()
 
