@@ -3,7 +3,7 @@ import slackclient
 from slackclien import SlackClient as SC
 
 
-os.environ['slc']='xoxp-4120244611-147108286259-374083396053-3a58df311fc7d1d35e396131471a1967'
+os.environ['slc']=
 token = os.environ['slc']
 sc=SC(token)
 
