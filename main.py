@@ -28,7 +28,11 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
-
+@app.route('/<ass>/')
+def hello1(ass):
+    """Return a friendly HTTP greeting."""
+    return f'Get the hell out of here {ass}'
+    
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
