@@ -17,8 +17,8 @@
 # [START gae_flex_quickstart]
 import logging
 
-from flask import Flask
-
+from flask import Flask, request, session, g, jsonify,  redirect, url_for, abort
+# from flask_api import FlaskAPI, status, exceptions
 
 app = Flask(__name__)
 
@@ -28,12 +28,13 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
-@app.route('/<ass>/')
+@app.route('/<ass>/', methods=['GET', 'POST'])
 def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
-    return request.text()
-    
+    # return request.json if request.json else 'sraka'
+    return jsonify({'tasks': 'tasks'})
+
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
