@@ -31,7 +31,8 @@ def hello():
 @app.route('/<ass>/')
 def hello1(ass):
     """Return a friendly HTTP greeting."""
-    return f'Get the hell out of here {ass}'
+    # return f'Get the hell out of here {ass}'
+    return request.text()
     
 @app.errorhandler(500)
 def server_error(e):
