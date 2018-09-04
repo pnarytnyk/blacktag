@@ -22,6 +22,13 @@ from flask import Flask, request, session, g, jsonify,  redirect, url_for, abort
 
 app = Flask(__name__)
 
+def write_to_file(a):
+    with open ('sraka.txt','a') as f:
+        f.write(a)
+
+def read_from_file():
+    with open ('sraka.txt','r') as f:
+        return f.read()
 
 @app.route('/')
 def hello():
@@ -33,7 +40,12 @@ def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
     # return request.json if request.json else 'sraka'
-    return jsonify({'tasks': 'tasks'})
+    if request.method == 'POST':
+        write_to_file(ass+'\n')
+        return jsonify({'tasks': 'tasks'})
+    else:
+        return read_from_file()
+
 
 @app.errorhandler(500)
 def server_error(e):
