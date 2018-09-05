@@ -133,4 +133,4 @@ class Part(ndb.Model):
 
 def print_part():
     p1 = Part(name='foo', color=Color.RED)
-    print p1.color  # prints "RED"
+    print (p1.color)  # prints "RED"
