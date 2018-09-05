@@ -16,6 +16,8 @@
 
 # [START gae_flex_quickstart]
 import logging
+import store
+import get_store
 
 from flask import Flask, request, session, g, jsonify,  redirect, url_for, abort
 # from flask_api import FlaskAPI, status, exceptions
@@ -35,16 +37,19 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
-@app.route('/<ass>/', methods=['GET', 'POST'])
+@app.route('/<ass>/', methods=['GET', 'POST', 'DELETE'])
 def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
     # return request.json if request.json else 'sraka'
     if request.method == 'POST':
+        store.create_contact()
+        return jsonify({'tasks': 'tasks'})
+    elif request.method == 'DELETE':    
         write_to_file(ass+'\n')
         return jsonify({'tasks': 'tasks'})
     else:
-        return read_from_file()
+        return query_contact_with_city()
 
 
 @app.errorhandler(500)
