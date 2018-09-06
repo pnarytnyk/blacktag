@@ -16,10 +16,10 @@
 
 # [START gae_flex_quickstart]
 import logging
-import store
-import get_store
 
+import datetime
 from flask import Flask, request, session, g, jsonify,  redirect, url_for, abort
+from google.cloud import datastore
 # from flask_api import FlaskAPI, status, exceptions
 
 app = Flask(__name__)
@@ -42,14 +42,18 @@ def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
     # return request.json if request.json else 'sraka'
+    ds = datastore.Client()
     if request.method == 'POST':
-        store.create_contact()
-        return jsonify({'tasks': 'tasks'})
+        entity = datastore.Entity(key=ds.key('sraka'))
+        entity.update({
+            'user_ip': ass,
+            'timestamp': datetime.datetime.utcnow()
+        })
+        ds.put(entity)
     elif request.method == 'DELETE':    
-        write_to_file(ass+'\n')
         return jsonify({'tasks': 'tasks'})
     else:
-        return query_contact_with_city()
+        return ds.query(kind='sraka', order=('-timestamp',))
 
 
 @app.errorhandler(500)
