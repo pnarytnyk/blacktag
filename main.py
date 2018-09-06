@@ -53,7 +53,7 @@ def hello1(ass):
     elif request.method == 'DELETE':    
         return jsonify({'tasks': 'tasks'})
     else:
-        return ds.query(kind='sraka', order=('-timestamp',))
+        return jsonify(ds.query(kind='sraka', order=('-timestamp',)))
 
 
 @app.errorhandler(500)
