@@ -50,10 +50,12 @@ def hello1(ass):
             'timestamp': datetime.datetime.utcnow()
         })
         ds.put(entity)
+        return 'write OK'
     elif request.method == 'DELETE':    
-        return jsonify({'tasks': 'tasks'})
+        return str(['sraka'])
     else:
-        return jsonify(ds.query(kind='sraka', order=('-timestamp',)))
+        qu = ds.query(kind='sraka', order=('-timestamp',))
+        return str([i.copy() for i in qu.fetch()])
 
 
 @app.errorhandler(500)
