@@ -41,21 +41,21 @@ def hello():
 def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
-    # return request.json if request.json else 'sraka'
-    # ds = datastore.Client()
-    # if request.method == 'POST':
-    #     entity = datastore.Entity(key=ds.key('sraka'))
-    #     entity.update({
-    #         'user_ip': ass,
-    #         'timestamp': datetime.datetime.utcnow()
-    #     })
-    #     ds.put(entity)
-    #     return 'write OK'
-    # elif request.method == 'DELETE':    
-    #     return str(['sraka'])
-    # else:
-    #     qu = ds.query(kind='sraka', order=('-timestamp',))
-    #     return str([i.copy() for i in qu.fetch()])
+    return request.json if request.json else 'sraka'
+    ds = datastore.Client()
+    if request.method == 'POST':
+        # entity = datastore.Entity(key=ds.key('sraka'))
+        # entity.update({
+        #     'user_ip': ass,
+        #     'timestamp': datetime.datetime.utcnow()
+        # })
+        # ds.put(entity)
+        return 'write OK'
+    elif request.method == 'DELETE':    
+        return str(['sraka'])
+    else:
+        # qu = ds.query(kind='sraka', order=('-timestamp',))
+        return str(['HZZZ'])
     return 'hello {}'.format(ass)
 
 
