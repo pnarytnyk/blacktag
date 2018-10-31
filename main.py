@@ -41,8 +41,8 @@ def hello():
 def hello1(ass):
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
-    return request.json if request.json else 'sraka'
-    ds = datastore.Client()
+    # return request.json if request.json else 'sraka'
+    # ds = datastore.Client()
     if request.method == 'POST':
         # entity = datastore.Entity(key=ds.key('sraka'))
         # entity.update({
