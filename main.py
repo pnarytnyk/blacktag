@@ -53,7 +53,7 @@ def hello1(ass):
         #     'timestamp': datetime.datetime.utcnow()
         # })
         # ds.put(entity)
-        return 'write OK'
+        return 'write OK1'
     elif request.method == 'DELETE':
         with open('sraka.txt','w+') as f:
             f.write('')    
