@@ -1,4 +1,3 @@
 Flask==1
-google-cloud-datastore
 gunicorn==19.5.0
 
