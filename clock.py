@@ -7,9 +7,11 @@ sched = BlockingScheduler()
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
     print('clock')
-    log(msg='AAAAAAAA clock',level=1)
-    with open('sraka.txt','w') as f:
+    # log(msg='AAAAAAAA clock',level=1)+
+    with open('sraka.txt','a') as f:
         f.write('123456\n')
+    a=with open('sraka.txt','r') as d:
+        print('clock',d.read())
 
 
 # @sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
