@@ -4,7 +4,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=3)
 def timed_job():
-	log(msg='AAAAAAAA',level=1)
+    log(msg='AAAAAAAA',level=1)
     with open('sraka.txt','a') as f:
         f.write('123456\n')
 
