@@ -1,11 +1,13 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
+# from apscheduler.schedulers.base import BaseScheduler
 from logging import log
 sched = BlockingScheduler()
+# sched = BasegScheduler()
 
-@sched.scheduled_job('interval', minutes=3)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
     log(msg='AAAAAAAA',level=1)
-    with open('sraka.txt','a') as f:
+    with open('sraka.txt','w') as f:
         f.write('123456\n')
 
 
