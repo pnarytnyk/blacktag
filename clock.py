@@ -4,14 +4,14 @@ from logging import log
 sched = BlockingScheduler()
 # sched = BasegScheduler()
 
-@sched.scheduled_job('interval', seconds=10)
+@sched.scheduled_job('interval', minutes=10)
 def timed_job():
-    print('clock')
+    print('clock -> IM ALIVE!!!!')
     # log(msg='AAAAAAAA clock',level=1)+
-    with open('sraka.txt','a') as f:
-        f.write('123456\n')
-    with open('sraka.txt','r') as d:
-        print('clock',d.read())
+    # with open('sraka.txt','a') as f:
+    #     f.write('123456\n')
+    # with open('sraka.txt','r') as d:
+    #     print('clock',d.read())
 
 
 # @sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
