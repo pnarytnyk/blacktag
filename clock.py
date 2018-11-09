@@ -4,7 +4,7 @@ from logging import log
 sched = BlockingScheduler()
 # sched = BasegScheduler()
 
-@sched.scheduled_job('interval', minutes=1)
+@sched.scheduled_job('interval', seconds=10)
 def timed_job():
     print('clock')
     # log(msg='AAAAAAAA clock',level=1)+
