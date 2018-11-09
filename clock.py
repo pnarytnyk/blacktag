@@ -10,7 +10,7 @@ def timed_job():
     # log(msg='AAAAAAAA clock',level=1)+
     with open('sraka.txt','a') as f:
         f.write('123456\n')
-    a=with open('sraka.txt','r') as d:
+    with open('sraka.txt','r') as d:
         print('clock',d.read())
 
 
