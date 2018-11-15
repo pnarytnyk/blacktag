@@ -37,7 +37,7 @@ ch=g.get_organization('Chrome-River')
 ju=os.environ.get('j_u',None)
 jp=os.environ.get('j_p',None)
 j = JIRA('https://chromeriver.atlassian.net',
-         basic_auth=('ju', 'jp'))
+         basic_auth=(ju, jp))
 
 nt = r'needs testing|ready for retesting'
 nrt = r'needs retesting'
@@ -57,7 +57,7 @@ sss=''
 sss=print_stuff(sss)
 
 shook=os.environ.get('s_hc',None)
-response = requests.post(
-    shook, data=json.dumps({'text': sss}),
-    headers={'Content-Type': 'application/json'}
-)
+# response = requests.post(
+#     shook, data=json.dumps({'text': sss}),
+#     headers={'Content-Type': 'application/json'}
+# )
