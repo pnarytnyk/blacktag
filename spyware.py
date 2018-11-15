@@ -56,8 +56,8 @@ p_tip=sorted(list(filter(lambda x: re.findall(tip, x[3]) and re.findall(r'(?i)cr
 sss=''
 sss=print_stuff(sss)
 
-wh='https://hooks.slack.com/services/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'
+shook=os.environ.get('s_hc',None)
 response = requests.post(
-    wh, data=json.dumps({'text': sss}),
+    shook, data=json.dumps({'text': sss}),
     headers={'Content-Type': 'application/json'}
 )
