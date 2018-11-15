@@ -57,7 +57,7 @@ sss=''
 sss=print_stuff(sss)
 
 shook=os.environ.get('s_hc',None)
-# response = requests.post(
-#     shook, data=json.dumps({'text': sss}),
-#     headers={'Content-Type': 'application/json'}
-# )
+response = requests.post(
+    shook, data=json.dumps({'text': sss}),
+    headers={'Content-Type': 'application/json'}
+)
