@@ -21,7 +21,7 @@ def print_stuff(a):
 	for i in p_tip:
 		a+=str(i[5]['name'])+ ' {: <55}\t'.format(i[1])+' {: <13}\t'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 		print( i[5]['name'], '{: <60}'.format(i[1]),i[0])
-	print('\ntested:')
+	# print('\ntested:')
 	# a+='\n*tested:*\n'
 	# for i in p_t:
 	# 	a+=str(i[5]['name'])+ ' {: <55}\t'.format(i[1])+' {: <13}\t'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
