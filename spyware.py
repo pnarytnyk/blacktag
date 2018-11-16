@@ -6,6 +6,11 @@ import requests
 import os
 import datetime
 
+def is_today_ok(b):
+	if b.isocalendar()[2]>5:
+		return False
+	return True
+
 def print_stuff(a):
 	print('needs testing:')
 	a+='*needs testing:*\n'
@@ -64,7 +69,10 @@ sss=''
 sss=print_stuff(sss)
 
 shook=os.environ.get('s_hc',None)
-response = requests.post(
-    shook, data=json.dumps({'text': sss}),
-    headers={'Content-Type': 'application/json'}
-)
+if is_today_ok(datetime.datetime.now().date()):
+	response = requests.post(
+	    shook, data=json.dumps({'text': sss}),
+	    headers={'Content-Type': 'application/json'}
+	)
+else:
+	print('Not today, buddy, not today...')
