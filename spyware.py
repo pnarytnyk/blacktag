@@ -11,6 +11,11 @@ def is_today_ok(b):
 		return False
 	return True
 
+def is_today_not_cutoff(b):
+	if b.isocalendar()[2] == 3 and b.isocalendar()[1]%2 != 0:
+		return False
+	return True
+
 def print_stuff(a):
 	print('needs testing:')
 	a+='*needs testing:*\n'
