@@ -53,7 +53,7 @@ def send_message(a):
 			      "fallback": "Whos turn will it be today? \nFind out in a message!",
 			      "color": "#36a64f",
 			      "title": f"Today's standup hero is {a}",
-			      "image_url": "some_url"
+			      "image_url": some_url
 			    }
 			  ]
 			}
