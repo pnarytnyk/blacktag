@@ -2,7 +2,7 @@ import re
 import json
 import requests
 import os
-from datetime import datetime
+import datetime
 import pymongo
 import random
 
