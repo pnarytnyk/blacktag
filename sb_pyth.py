@@ -7,7 +7,7 @@ import pymongo
 import random
 
 #------------------------------------------------------------------------------------------------------------------#
-one_day=datetime.datetime.timedelta(days=1)
+one_day=datetime.timedelta(days=1)
 
 mon_con=os.environ.get('mon_conn',None)
 mon_db=os.environ.get('mon_db',None)
