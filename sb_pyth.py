@@ -73,6 +73,7 @@ def send_message(a):
 	    shook, data=payload,
 	    headers={'Content-Type': 'application/json'}
 	)
+	return response
 
 def update_log(a):
 	clog.append(cusers)
@@ -94,8 +95,10 @@ def refresh_curr_data():
 	cusers = users['users']
 	clog = log['log']
 
-
+print('WAIT A SEC')
 if is_today_ok(datetime.datetime.now().date()):
-	send_message(cusers[0])
+	print('SENDING MESSAGE')
+	resp=send_message(cusers[0])
+	print(resp)
 else:
 	print('Not today, buddy, not today...')
