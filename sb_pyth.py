@@ -45,7 +45,7 @@ def is_today_not_cutoff(b):
 
 def send_message(a):
 	some_url = f"https://picsum.photos/1000/100/?image={random.randint(1,1050)}"
-	if is_today_not_cutoff(datetime.now().date()):
+	if is_today_not_cutoff(datetime.datetime.now().date()):
 		payload = {
 			  "attachments": [
 			    {
