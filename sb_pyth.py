@@ -7,29 +7,29 @@ import pymongo
 import random
 
 #------------------------------------------------------------------------------------------------------------------#
-def __init__(self):
-	one_day=datetime.timedelta(days=1)
 
-	mon_con=os.environ.get('mon_conn',None)
-	mon_db=os.environ.get('mon_db',None)
-	cloud=os.environ.get('CLOUDINARY_URL',None)
-	cname=os.environ.get('C_NAME',None)
-	shook=os.environ.get('s_hc',None)
-	s_toc=os.environ.get('s_toc',None)
+one_day=datetime.timedelta(days=1)
 
-	cl=pymongo.MongoClient(mon_con)
-	db=cl[mon_db]
-	us=db.users
-	l=db.log
+mon_con=os.environ.get('mon_conn',None)
+mon_db=os.environ.get('mon_db',None)
+cloud=os.environ.get('CLOUDINARY_URL',None)
+cname=os.environ.get('C_NAME',None)
+shook=os.environ.get('s_hc',None)
+s_toc=os.environ.get('s_toc',None)
 
-	users = us.find_one()
-	log = l.find_one()
+cl=pymongo.MongoClient(mon_con)
+db=cl[mon_db]
+us=db.users
+l=db.log
 
-	cusers = users['users']
-	clog = log['log']
+users = us.find_one()
+log = l.find_one()
 
-	us_id = users['_id']
-	log_id = log['_id']
+cusers = users['users']
+clog = log['log']
+
+us_id = users['_id']
+log_id = log['_id']
 
 
 #------------------------------------------------------------------------------------------------------------------#
