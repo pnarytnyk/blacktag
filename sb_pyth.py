@@ -70,7 +70,7 @@ def send_message(a):
 			  ]
 			}
 	response = requests.post(
-	    shook, data=payload,
+	    shook, data=json.dumps(payload),
 	    headers={'Content-Type': 'application/json'}
 	)
 	return response
