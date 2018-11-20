@@ -96,10 +96,10 @@ def refresh_curr_data():
 	cusers = users['users']
 	clog = log['log']
 
-print('WAIT A SEC')
-if is_today_ok(datetime.datetime.now().date()):
-	print('SENDING MESSAGE')
-	resp=send_message(cusers[0])
-	print(resp)
-else:
-	print('Not today, buddy, not today...')
+# print('WAIT A SEC')
+# if is_today_ok(datetime.datetime.now().date()):
+# 	print('SENDING MESSAGE')
+# 	resp=send_message(cusers[0])
+# 	print(resp)
+# else:
+# 	print('Not today, buddy, not today...')
