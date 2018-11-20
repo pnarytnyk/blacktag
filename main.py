@@ -26,8 +26,10 @@ def hello1(ass):
     # return request.json if request.json else 'sraka'
     # ds = datastore.Client()
     if request.method == 'POST':
-        with open('sraka.txt','w+') as f:
-            f.write('jopen')
+        print(dir(request))
+        # print(request.headers)
+        # with open('sraka.txt','w+') as f:
+        #     f.write('jopen')
 
         # entity = datastore.Entity(key=ds.key('sraka'))
         # entity.update({
@@ -35,17 +37,19 @@ def hello1(ass):
         #     'timestamp': datetime.datetime.utcnow()
         # })
         # ds.put(entity)
-        return 'write OK1'
+        # return str(dir(request))
+        return str(request.args) + '\n\n'+ '\n\n' + str(request.data)
+
     elif request.method == 'DELETE':
-        with open('sraka.txt','w+') as f:
-            f.write('')    
+        # with open('sraka.txt','w+') as f:
+        #     f.write('')    
         return str(['written \'\''])
     else:
         # qu = ds.query(kind='sraka', order=('-timestamp',))
-        with open('sraka.txt','r') as f:
-            s=f.read()
-        return s
-    return 'hello {}'.format(ass)
+        # with open('sraka.txt','r') as f:
+        #     s=f.read()
+        return 's'
+    return 'hello {}'.format("ass")
 
 
 @app.errorhandler(500)
