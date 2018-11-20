@@ -78,11 +78,13 @@ def send_message(a):
 
 def update_log():
 	clog.append(cusers)
-	log.update_one({'_id':log_id,},{'$set':{'log':clog}})
+	l.update_one({'_id':log_id,},{'$set':{'log':clog}})
+	print(type(log))
+	print(log)
 
 def update_user_seq(a=1):
 	cusers = cusers[1:]+cusers[:1]
-	users.update_one({'_id':us_id,},{'$set':{'users':cusers}})
+	us.update_one({'_id':us_id,},{'$set':{'users':cusers}})
 
 def refresh_curr_data():
 	cl=pymongo.MongoClient(mon_con)
