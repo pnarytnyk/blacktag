@@ -38,7 +38,7 @@ def hello1(ass):
         # })
         # ds.put(entity)
         # return str(dir(request))
-        return str(request.args) + '\n\n'+ '\n\n' + str(request.data) + "\n\n" + str(request.headers)
+        return str(request.view_args) + '\n\n'+ '\n\n' + str(request.get_data) + "\n\n" + str(request.headers)+ "\n\n" + str(request.get_json)
 
     elif request.method == 'DELETE':
         # with open('sraka.txt','w+') as f:
