@@ -57,7 +57,7 @@ def send_message(shook=shook):
 
 
 @app.route('/', methods=['POST', 'DELETE'])
-def hello1(ass):
+def hello1():
     """Return a friendly HTTP greeting."""
     # return f'Get the hell out of here {ass}'
     # return request.json if request.json else 'sraka'
