@@ -19,7 +19,7 @@ def parse_args(a):
     b=dict(a)
     if b.get('text', None):
         b['text'] = b['text'].split('+')
-    b['response_url'] = urllib.parse.unqoute(b['response_url'])
+    b['response_url'] = urllib.parse.unquote(b['response_url'])
     return b
 
 def write_to_file(a):
