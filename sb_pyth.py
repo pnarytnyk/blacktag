@@ -82,7 +82,7 @@ def update_log():
 	print(type(log))
 	print(log)
 
-def update_user_seq(a=1):
+def update_user_seq(cusers):
 	cusers = cusers[1:]+cusers[:1]
 	us.update_one({'_id':us_id,},{'$set':{'users':cusers}})
 
