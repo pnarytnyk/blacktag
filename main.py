@@ -35,7 +35,7 @@ def read_from_file():
 #     """Return a friendly HTTP greeting."""
 #     return 'Hello World!'
 
-def send_message():
+def send_message(shook=shook):
     some_url = f"https://picsum.photos/1000/100/?image={random.randint(1,1050)}"
     payload = {
           "attachments": [
@@ -44,7 +44,7 @@ def send_message():
               "fallback": "Whos turn will it be today? \nFind out in a message!",
               "color": "#36a64f",
               "title": f"List :D",
-              "image_url": some_url,
+              # "image_url": some_url,
               "channel": 'D6V49LV1S'
             }
           ]
@@ -65,6 +65,7 @@ def hello1(ass):
     if request.method == 'POST':
         params = parse_args(request.get_data())
         if params.get('token',None) == s_toc:
+            send_message(shook=params['response_url'])
 
 
         return str(request.args) + '\n\n'+str(request.view_args) + '\n\n'+ '\n\n' + str(request.get_data()) + "\n\n" + str(request.parameter_storage_class)+ "\n\n" + str(request.parameter_storage_class)+ "\n\n"+ str(request.headers)
