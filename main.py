@@ -5,6 +5,7 @@ import datetime
 from flask import Flask, request, session, g, jsonify,  redirect, url_for, abort
 import urllib
 import random
+import requests
 # from flask_api import FlaskAPI, status, exceptions
 
 shook=os.environ.get('s_hc',None)
