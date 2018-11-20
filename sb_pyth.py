@@ -76,7 +76,7 @@ def send_message(a):
 	)
 	return response
 
-def update_log(a):
+def update_log():
 	clog.append(cusers)
 	log.update_one({'_id':log_id,},{'$set':{'log':clog}})
 
