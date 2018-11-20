@@ -92,12 +92,10 @@ def refresh_curr_data():
 	us=db.users
 	l=db.log
 
-	users = us.find_one()['users']
-	log = l.find_one()['log']
+	cusers = us.find_one()['users']
+	clog = l.find_one()['log']
 
-	cusers = users['users']
-	clog = log['log']
-
+	return cusers, clog
 # print('WAIT A SEC')
 # if is_today_ok(datetime.datetime.now().date()):
 # 	print('SENDING MESSAGE')
