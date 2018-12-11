@@ -49,7 +49,7 @@ def send_message(a):
 	if is_today_not_cutoff(datetime.datetime.now().date()):
 		payload = {
 			  "attachments": [
-			    {
+			    { "parse":"full",
 			      "link_names": 1,
 			      "fallback": "Whos turn will it be today? \nFind out in a message!",
 			      "color": "#36a64f",

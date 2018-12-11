@@ -23,19 +23,19 @@ def print_stuff(a):
 	if not p_nt:
 		a+='\n*NONE*\n'
 	for i in p_nt:
-		a+=str(i[5]['name'])+ ' {: <62}'.format(i[1])+' {: <16}\t'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
+		a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	
 	a+='\n*needs retesting:*\n'
 	if not p_nrt:
 		a+='\n*NONE*\n'
 	for i in p_nrt:
-		a+=str(i[5]['name'])+ ' {: <62}'.format(i[1])+' {: <16}\t'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
+		a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	
 	a+='\n*testing in progress:*\n'
 	if not p_tip:
 		a+='\n*NONE*\n'
 	for i in p_tip:
-		a+=str(i[5]['name'])+ ' {: <62}'.format(i[1])+' {: <16}\t'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
+		a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	
 	a+='\n*{} PRs tested, but not merged currently*'.format(len(p_t))
 	# a+='\n*tested:*\n'
@@ -71,7 +71,7 @@ p_tip=sorted(list(filter(lambda x: re.findall(tip, x[3]) and re.findall(r'(?i)cr
 
 sss=''
 sss=print_stuff(sss)
-
+# print(sss)
 shook=os.environ.get('s_hc',None)
 if is_today_ok(datetime.datetime.now().date()):
 	response = requests.post(
