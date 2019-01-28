@@ -65,9 +65,10 @@ def hello1():
     # return request.json if request.json else 'sraka'
     # ds = datastore.Client()
     if request.method == 'POST':
-        params = parse_args(request.get_data())
-        if params.get('token',None) == s_toc:
-            send_message(shook=params['response_url'])
+        
+        # params = parse_args(request.get_data())
+        # if params.get('token',None) == s_toc:
+        #     send_message(shook=params['response_url'])
         else:
             print(request.get_data())
 
