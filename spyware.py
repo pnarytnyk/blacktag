@@ -20,7 +20,7 @@ def is_today_not_cutoff(b):
 def print_stuff(a):
 	if p_reop:
 		a+=':alert: *REOPENS:* :alert:\n'
-		for i in p_nt:
+		for i in reop:
 			a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	a+='*needs testing:*\n'
 	if not p_nt:
@@ -77,11 +77,11 @@ p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and re.findall(r'(?i)
 sss=''
 sss=print_stuff(sss)
 # print(sss)
-shook=os.environ.get('s_hc',None)
-if is_today_ok(datetime.datetime.now().date()):
-	response = requests.post(
-	    shook, data=json.dumps({'text': sss}),
-	    headers={'Content-Type': 'application/json'}
-	)
-else:
-	print('Not today, buddy, not today...')
+# shook=os.environ.get('s_hc',None)
+# if is_today_ok(datetime.datetime.now().date()):
+# 	response = requests.post(
+# 	    shook, data=json.dumps({'text': sss}),
+# 	    headers={'Content-Type': 'application/json'}
+# 	)
+# else:
+# 	print('Not today, buddy, not today...')
