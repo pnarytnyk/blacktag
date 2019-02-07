@@ -76,7 +76,7 @@ p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and re.findall(r'(?i)
 
 sss=''
 sss=print_stuff(sss)
-# print(sss)
+print(sss)
 # shook=os.environ.get('s_hc',None)
 # if is_today_ok(datetime.datetime.now().date()):
 # 	response = requests.post(
