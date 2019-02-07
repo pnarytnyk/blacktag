@@ -58,7 +58,7 @@ jp=os.environ.get('j_p',None)
 j = JIRA('https://chromeriver.atlassian.net',
          basic_auth=(ju, jp))
 
-nt = r'needs testing|ready for retesting'
+nt = r'needs testing|ready for retesting|test'
 nrt = r'needs retesting'
 t = r'tested'
 tip = r'testing in progress'
