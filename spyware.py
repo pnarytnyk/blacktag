@@ -18,7 +18,10 @@ def is_today_not_cutoff(b):
 	return True
 
 def print_stuff(a):
-	
+	if p_reop:
+		a+=':alert: *REOPENS:* :alert:\n'
+		for i in p_nt:
+			a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	a+='*needs testing:*\n'
 	if not p_nt:
 		a+='\n*NONE*\n'
@@ -59,6 +62,7 @@ nt = r'needs testing|ready for retesting'
 nrt = r'needs retesting'
 t = r'tested'
 tip = r'testing in progress'
+reop = r'reopen|blocker'
 
 rep=[ch.get_repo(i) for i in repos]
 
@@ -68,6 +72,7 @@ p_nt=sorted(list(filter(lambda x: re.findall(nt, x[3]) and re.findall(r'(?i)crt'
 p_nrt=sorted(list(filter(lambda x: re.findall(nrt, x[3]) and re.findall(r'(?i)crt', x[0]) and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 p_t=sorted(list(filter(lambda x: re.findall(t, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 p_tip=sorted(list(filter(lambda x: re.findall(tip, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
+p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 
 sss=''
 sss=print_stuff(sss)
