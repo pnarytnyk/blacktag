@@ -58,11 +58,11 @@ jp=os.environ.get('j_p',None)
 j = JIRA('https://chromeriver.atlassian.net',
          basic_auth=(ju, jp))
 
-nt = r'needs testing|ready for retesting|test'
+nt = r'needs testing|ready for retesting'
 nrt = r'needs retesting'
 t = r'tested'
 tip = r'testing in progress'
-reop = r'reopen|blocker'
+reop = r'reopen|blocker|test label'
 
 rep=[ch.get_repo(i) for i in repos]
 
