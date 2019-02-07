@@ -20,7 +20,7 @@ def is_today_not_cutoff(b):
 def print_stuff(a):
 	if p_reop:
 		a+=':alert: *REOPENS:* :alert:\n'
-		for i in reop:
+		for i in p_reop:
 			a+=str(i[5]['name'])+ '   {: <52}'.format(i[1])+' {: <16}'.format(i[2])+'https://chromeriver.atlassian.net/browse/{}'.format(i[4] if i[4] else 'no jira link in PR')+'\n'
 	a+='*needs testing:*\n'
 	if not p_nt:
