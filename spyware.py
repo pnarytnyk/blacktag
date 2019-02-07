@@ -62,7 +62,7 @@ nt = r'needs testing|ready for retesting'
 nrt = r'needs retesting'
 t = r'tested'
 tip = r'testing in progress'
-reop = r'reopen|blocker|test label'
+reop = r'reopen|blocker'
 
 rep=[ch.get_repo(i) for i in repos]
 
@@ -76,12 +76,12 @@ p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and re.findall(r'(?i)
 
 sss=''
 sss=print_stuff(sss)
-print(sss)
-# shook=os.environ.get('s_hc',None)
-# if is_today_ok(datetime.datetime.now().date()):
-# 	response = requests.post(
-# 	    shook, data=json.dumps({'text': sss}),
-# 	    headers={'Content-Type': 'application/json'}
-# 	)
-# else:
-# 	print('Not today, buddy, not today...')
+# print(sss)
+shook=os.environ.get('s_hc',None)
+if is_today_ok(datetime.datetime.now().date()):
+	response = requests.post(
+	    shook, data=json.dumps({'text': sss}),
+	    headers={'Content-Type': 'application/json'}
+	)
+else:
+	print('Not today, buddy, not today...')
