@@ -48,7 +48,7 @@ def print_stuff(a):
 	return a
 
 devs = ['vpetryk','aivanochko','tkhoma','aromaniv','dhorohotskyi','oziniak','vlevytskyi','tommywoo916','alliecr']
-repos = ['mercury', 'tessera-web', 'tessera', 'tessera-validation', 'disney','analytics','customer']
+repos = ['mercury', 'tessera-web', 'tessera', 'tessera-validation', 'disney','analytics','customer','tessera-libraries']
 tkn = os.environ.get('g_tkn',None)
 g = git(tkn)
 ch=g.get_organization('Chrome-River')
