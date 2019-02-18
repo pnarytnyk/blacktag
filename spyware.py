@@ -72,7 +72,7 @@ p_nt=sorted(list(filter(lambda x: re.findall(nt, x[3]) and re.findall(r'(?i)crt'
 p_nrt=sorted(list(filter(lambda x: re.findall(nrt, x[3]) and re.findall(r'(?i)crt', x[0]) and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 p_t=sorted(list(filter(lambda x: re.findall(t, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 p_tip=sorted(list(filter(lambda x: re.findall(tip, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
-p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
+p_reop=sorted(list(filter(lambda x: re.findall(reop, x[3]) and not re.findall(t, x[3]) and re.findall(r'(?i)crt', x[0])and x[2] in devs, pulls)), key=lambda x: int(x[5]['id']))
 
 sss=''
 sss=print_stuff(sss)
