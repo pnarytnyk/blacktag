@@ -7,7 +7,7 @@ import urllib
 import random
 import requests
 # from flask_api import FlaskAPI, status, exceptions
-
+from jir import *
 shook=os.environ.get('s_hc',None)
 s_toc=os.environ.get('s_toc',None)
 
@@ -24,38 +24,38 @@ def parse_args(a):
     b['response_url'] = urllib.parse.unquote(b['response_url'])
     return b
 
-def write_to_file(a):
-    with open ('sraka.txt','a') as f:
-        f.write(a)
+# def write_to_file(a):
+#     with open ('sraka.txt','a') as f:
+#         f.write(a)
 
-def read_from_file():
-    with open ('sraka.txt','r') as f:
-        return f.read()
+# def read_from_file():
+#     with open ('sraka.txt','r') as f:
+#         return f.read()
 
-# @app.route('/')
-# def hello():
-#     """Return a friendly HTTP greeting."""
-#     return 'Hello World!'
+@app.route('/')
+def hello():
+    """Return a friendly HTTP greeting."""
+    return create_csv(203)
 
-def send_message(shook=shook):
-    some_url = f"https://picsum.photos/1000/100/?image={random.randint(1,1050)}"
-    payload = {
-          "attachments": [
-            {
-              "link_names": 1,
-              "fallback": "Whos turn will it be today? \nFind out in a message!",
-              "color": "#36a64f",
-              "title": f"List :D",
-              # "image_url": some_url,
-              "channel": 'D6V49LV1S'
-            }
-          ]
-        }
-    response = requests.post(
-        shook, data=json.dumps(payload),
-        headers={'Content-Type': 'application/json'}
-    )
-    return response
+# def send_message(shook=shook):
+#     some_url = f"https://picsum.photos/1000/100/?image={random.randint(1,1050)}"
+#     payload = {
+#           "attachments": [
+#             {
+#               "link_names": 1,
+#               "fallback": "Whos turn will it be today? \nFind out in a message!",
+#               "color": "#36a64f",
+#               "title": f"List :D",
+#               # "image_url": some_url,
+#               "channel": 'D6V49LV1S'
+#             }
+#           ]
+#         }
+#     response = requests.post(
+#         shook, data=json.dumps(payload),
+#         headers={'Content-Type': 'application/json'}
+#     )
+#     return response
 
 
 @app.route('/', methods=['POST', 'DELETE'])
@@ -65,7 +65,7 @@ def hello1():
     # return request.json if request.json else 'sraka'
     # ds = datastore.Client()
     if request.method == 'POST':
-        
+
         # params = parse_args(request.get_data())
         # if params.get('token',None) == s_toc:
         #     send_message(shook=params['response_url'])
