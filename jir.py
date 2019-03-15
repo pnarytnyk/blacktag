@@ -92,7 +92,7 @@ if len(sys.argv) == 2:
 
 def create_csv(sprint):
     j = JIRA('https://chromeriver.atlassian.net',
-         basic_auth=('petro.narytnyk@chromeriver.com', 'Zz4815162342'))
+         basic_auth=('####################', '########################'))
     issues = j.search_issues(
         construct_upd_querry(sprint), maxResults=200)  # issues search
     formed_list = form_iss_list(issues)
@@ -140,3 +140,5 @@ def create_csv(sprint):
     print('\n\nFile {}{} was created successfully!\n\n'.format(os.path.abspath('.'), 'Sprint_{}_stats.csv'.format(sprint)))
     # a = input('ok?')
     return 'Sprint_{}_stats.csv'.format(sprint)
+
+create_csv(204)
